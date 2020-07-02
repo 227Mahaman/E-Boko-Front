@@ -1,1 +1,75 @@
-<p>anneescolaire works!</p>
+<div class="row">
+  <div class="col-md-4">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Année Scolaire</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form role="form" method="post">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="as">Code Année</label>
+            <input type="text" required class="form-control" id="as" name="codeA" ngModel="codeA" placeholder="AN-19-20">
+          </div>
+          <div class="form-group">
+            <label for="intitule">Intitulé</label>
+            <textarea required class="form-control" id="intitule" ngModel="intituleA" name="intituleA" placeholder="Intitulé de l'année"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dA">Directeur Adjoint</label>
+            <input type="text" class="form-control" id="dA" ngModel="dA" name="dA" placeholder="Directeur Adjoint">
+          </div>
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary">Valider</button>
+          <p></p>
+          <!-- Message notif -->
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listes</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th style="width: 10px">ID</th>
+            <th>Année</th>
+            <th>Intitulé</th>
+            <th>DA</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let anneescolaire of anneescolaires">
+            <td>{{anneescolaire.idA}}</td>
+            <td>{{anneescolaire.codeA}}</td>
+            <td>{{anneescolaire.intituleA}}</td>
+            <td>{{anneescolaire.dA}}</td>
+            <td>
+              <a class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a (click)="deleteAnneescolaire(anneescolaire)" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+          <!-- Notif -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>

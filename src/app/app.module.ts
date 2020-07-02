@@ -90,6 +90,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes, {enableTracing:true})
