@@ -14,6 +14,63 @@ import { NoteComponent } from './note/note.component';
 import { SalleComponent } from './salle/salle.component';
 import { SemestreComponent } from './semestre/semestre.component';
 import { SessionComponent } from './session/session.component';
+import {Router, RouterModule, Routes} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { NavigationComponent } from './navigation/navigation.component';
+
+
+const appRoutes: Routes = [
+  {
+    path: 'anneescolaire',
+    component:AnneescolaireComponent
+  },
+  {
+    path: 'devoir',
+    component:DevoirComponent
+  },
+  {
+    path: 'etudiant',
+    component:EtudiantComponent
+  },
+  {
+    path: 'filiere',
+    component:FiliereComponent
+  },
+  {
+    path: 'Module',
+    component:ModuleComponent
+  },
+  {
+    path: 'niveau',
+    component:NiveauComponent
+  },
+  {
+    path: 'note',
+    component:NoteComponent
+  },
+  {
+    path: 'salle',
+    component:SalleComponent
+  },
+  {
+    path: 'semestre',
+    component:SemestreComponent
+  },
+  {
+    path: 'session',
+    component:SessionComponent
+  },
+  {
+    path: 'ue',
+    component:UeComponent
+  },
+  {
+    path: '',
+    component:AppComponent,
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   declarations: [
@@ -28,11 +85,14 @@ import { SessionComponent } from './session/session.component';
     NoteComponent,
     SalleComponent,
     SemestreComponent,
-    SessionComponent
+    SessionComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes, {enableTracing:true})
   ],
   providers: [],
   bootstrap: [AppComponent]
