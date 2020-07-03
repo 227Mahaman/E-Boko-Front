@@ -1,1 +1,79 @@
-<p>filiere works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Enregistrement d'une filière</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form role="form" method="post" enctype="multipart/form-data">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="codeF">Code filière</label>
+            <input type="text" required class="form-control" id="codeF" name="codeF" value="" placeholder="Code de la filière">
+          </div>
+          <div class="form-group">
+            <label for="intituleF">Intitulé</label>
+            <input type="text" required class="form-control" id="intituleF" name="intituleF" value="" placeholder="Intitulé de la filière">
+          </div>
+          <div class="form-group">
+            <label for="descriptionF">Description</label>
+            <input type="text" required class="form-control" id="descriptionF" name="descriptionF" value="" placeholder="Description de la filière">
+          </div>
+          <div class="form-group">
+            <label for="dateCreation">Date</label>
+            <input type="date" required class="form-control" id="dateCreation" name="dateCreation" value="">
+          </div>
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary">Valider</button>
+          <p></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listes des filières</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Intitulé</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let filiere of filieres">
+            <td>{{filiere.idF}}</td>
+            <td>{{filiere.codeF}}</td>
+            <td>{{filiere.intituleF}}</td>
+            <td>{{filiere.descriptionF}}</td>
+            <td>{{filiere.dateCreation}}</td>
+            <td>
+              <a class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a (click)="deleteFiliere(filiere)" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+          <!-- -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>

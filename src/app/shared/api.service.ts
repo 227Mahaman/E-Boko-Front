@@ -3,6 +3,11 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Anneescolaire} from "../models/anneescolaire";
 import {Ue} from "../models/ue";
+import {Filiere} from "../models/filiere";
+import {Niveau} from "../models/niveau";
+import {Devoir} from "../models/devoir";
+import {Module} from "../models/module";
+import {Semestre} from "../models/semestre";
 
 @Injectable({
   providedIn: 'root'
@@ -85,4 +90,26 @@ export class ApiService {
   deleteUe(id:string): Observable<any> {
     return this.http.delete(this.DELETE_UE_URL + id);
   }
+
+  getAllDevoirs(): Observable<Devoir[]> {
+    return this.http.get<Devoir[]>(this.ALL_DEVOIR_URL);
+  }
+
+  getAllFilieres(): Observable<Filiere[]> {
+    return this.http.get<Filiere[]>(this.ALL_FILIERE_URL);
+  }
+
+  getAllModules(): Observable<Module[]> {
+    return this.http.get<Module[]>(this.ALL_MODULE_URL);
+  }
+
+  getAllNiveaux(): Observable<Niveau[]> {
+    return this.http.get<Niveau[]>(this.ALL_NIVEAU_URL);
+  }
+
+  getAllSemestres(): Observable<Semestre[]> {
+    return this.http.get<Semestre[]>(this.ALL_SEMESTRE_URL);
+  }
+
+
 }

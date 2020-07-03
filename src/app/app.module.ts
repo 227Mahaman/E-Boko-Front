@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     component:FiliereComponent
   },
   {
-    path: 'Module',
+    path: 'module',
     component:ModuleComponent
   },
   {
