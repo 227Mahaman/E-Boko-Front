@@ -7,19 +7,19 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="post">
+      <form role="form" (submit)="insertion($event)" >
         <div class="box-body">
           <div class="form-group">
-            <label for="as">Code Année</label>
-            <input type="text" required class="form-control" id="as" name="codeA" ngModel="codeA" placeholder="AN-19-20">
+            <label for="codeA">Code Année</label>
+            <input type="text" class="form-control" id="codeA" nplaceholder="AN-19-20">
           </div>
           <div class="form-group">
             <label for="intitule">Intitulé</label>
-            <textarea required class="form-control" id="intitule" ngModel="intituleA" name="intituleA" placeholder="Intitulé de l'année"></textarea>
+            <textarea class="form-control" id="intitule" placeholder="Intitulé de l'année"></textarea>
           </div>
           <div class="form-group">
             <label for="dA">Directeur Adjoint</label>
-            <input type="text" class="form-control" id="dA" ngModel="dA" name="dA" placeholder="Directeur Adjoint">
+            <input type="text" class="form-control" id="dA" placeholder="Directeur Adjoint">
           </div>
         </div>
         <!-- /.box-body -->

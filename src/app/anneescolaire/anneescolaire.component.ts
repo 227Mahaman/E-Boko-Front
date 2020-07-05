@@ -29,25 +29,6 @@ export class AnneescolaireComponent implements OnInit {
     );
   }
 
-  createAnneescolaire() {
-    let newAnnee: Anneescolaire = {
-      idA:null,
-      codeA:null,
-      intituleA:null,
-      datasourceA:null,
-      dA:null
-    }
-    this.apiService.postAnneescolaire(newAnnee).subscribe(
-      res => {
-        newAnnee.idA = res.idA;
-        this.anneescolaires.push(newAnnee);
-      },
-      err => {
-        alert("Erreur insertion AnnéeScolaire !");
-      }
-    );
-  }
-
   deleteAnneescolaire(anneescolaire: Anneescolaire) {
     if(confirm("Etes vous sûre de vouloir supprimer l'Année Scolaire?")){
       this.apiService.deleteAnneescolaire(anneescolaire.idA).subscribe(
@@ -60,5 +41,30 @@ export class AnneescolaireComponent implements OnInit {
         }
       );
     }
+  }
+
+  insertion(event) {
+    event.preventDefault()
+    const target = event.target
+    const codeA = target.querySelector('#codeA').value
+    const intitule = target.querySelector('#intitule').value
+    const dA = target.querySelector('#dA').value
+    console.log(codeA, intitule, dA)
+    let newAs: Anneescolaire = {
+      idA:null,
+      codeA:codeA,
+      intituleA: intitule,
+      dA:dA,
+      datasourceA:null
+    }
+    this.apiService.postAnneescolaire(newAs).subscribe(
+      res => {
+        newAs.idA = res.idA;
+        this.anneescolaires.push(newAs);
+      },
+      err => {
+        alert("Erreur lors de l'insertion d'une année scolaire !");
+      }
+    );
   }
 }
