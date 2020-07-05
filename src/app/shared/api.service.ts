@@ -19,6 +19,7 @@ export class ApiService {
   private SAVE_ANNEESCOLAIRE_URL = `${this.BASE_URL}\\anneescolaire\\add`;
   private UPDATE_ANNEESCOLAIRE_URL = `${this.BASE_URL}\\anneescolaire\\update`;
   private DELETE_ANNEESCOLAIRE_URL = `${this.BASE_URL}\\anneescolaire\\`;
+  private GET_ANNEESCOLAIRE_URL = `${this.BASE_URL}\\anneescolaire\\`;
   //Devoir
   private ALL_DEVOIR_URL = `${this.BASE_URL}\\devoir\\all`;
   private SAVE_DEVOIR_URL = `${this.BASE_URL}\\devoir\\add`;
@@ -112,4 +113,7 @@ export class ApiService {
   }
 
 
+  getAnnescolaire(idA: string): Observable<any>{
+    return this.http.get(this.GET_ANNEESCOLAIRE_URL + idA);
+  }
 }

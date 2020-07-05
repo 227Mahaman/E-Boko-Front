@@ -9,6 +9,7 @@ import {ApiService} from "../shared/api.service";
 })
 export class AnneescolaireComponent implements OnInit {
   anneescolaires: Anneescolaire[] = [];
+  //annee: Anneescolaire;
 
   constructor(private apiService: ApiService) {
 
@@ -66,5 +67,17 @@ export class AnneescolaireComponent implements OnInit {
         alert("Erreur lors de l'insertion d'une année scolaire !");
       }
     );
+  }
+
+  selectData(anneescolaire: Anneescolaire) {
+    /*this.annee = anneescolaire;
+    this.apiService.getAnnescolaire(anneescolaire.idA).subscribe(
+      res => {
+        this.annee = res;
+      },
+      err => {
+        alert("Erreur lors de la recuperation d'une année scolaire !");
+      }
+    );*/
   }
 }
