@@ -112,8 +112,11 @@ export class ApiService {
     return this.http.get<Semestre[]>(this.ALL_SEMESTRE_URL);
   }
 
-
   getAnnescolaire(idA: string): Observable<any>{
     return this.http.get(this.GET_ANNEESCOLAIRE_URL + idA);
+  }
+
+  postFilieres(filiere: Filiere): Observable<Filiere> {
+    return this.http.post<Filiere>(this.SAVE_FILIERE_URL, filiere);
   }
 }

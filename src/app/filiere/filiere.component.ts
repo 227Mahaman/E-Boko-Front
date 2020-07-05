@@ -31,4 +31,30 @@ export class FiliereComponent implements OnInit {
   deleteFiliere(filiere: Filiere) {
 
   }
+
+  createFiliere(event) {
+    event.preventDefault()
+    const target = event.target
+    const codeF = target.querySelector('#codeF').value
+    const intituleF = target.querySelector('#intituleF').value
+    const descriptionF = target.querySelector('#descriptionF').value
+    const dateCreation = target.querySelector('#dateCreation').value
+    console.log(codeF, intituleF, descriptionF, dateCreation)
+    let newFiliere: Filiere = {
+      idF:null,
+      codeF:codeF,
+      intituleF:intituleF,
+      descriptionF:descriptionF,
+      dateCreation:dateCreation
+    }
+    this.apiService.postFilieres(newFiliere).subscribe(
+      res => {
+        newFiliere.idF = res.idF;
+        this.filieres.push(newFiliere);
+      },
+      err => {
+        alert("Erreur survenue lors de la création d'une filière !");
+      }
+    );
+  }
 }

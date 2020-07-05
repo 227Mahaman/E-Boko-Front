@@ -7,23 +7,23 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="post" enctype="multipart/form-data">
+      <form role="form" (submit)="createFiliere($event)">
         <div class="box-body">
           <div class="form-group">
             <label for="codeF">Code filière</label>
-            <input type="text" required class="form-control" id="codeF" name="codeF" value="" placeholder="Code de la filière">
+            <input type="text" required class="form-control" id="codeF" placeholder="Code de la filière">
           </div>
           <div class="form-group">
             <label for="intituleF">Intitulé</label>
-            <input type="text" required class="form-control" id="intituleF" name="intituleF" value="" placeholder="Intitulé de la filière">
+            <input type="text" required class="form-control" id="intituleF" placeholder="Intitulé de la filière">
           </div>
           <div class="form-group">
             <label for="descriptionF">Description</label>
-            <input type="text" required class="form-control" id="descriptionF" name="descriptionF" value="" placeholder="Description de la filière">
+            <input type="text" required class="form-control" id="descriptionF" placeholder="Description de la filière">
           </div>
           <div class="form-group">
             <label for="dateCreation">Date</label>
-            <input type="date" required class="form-control" id="dateCreation" name="dateCreation" value="">
+            <input type="date" required class="form-control" id="dateCreation">
           </div>
         </div>
         <!-- /.box-body -->
