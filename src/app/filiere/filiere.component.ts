@@ -29,7 +29,17 @@ export class FiliereComponent implements OnInit {
   }
 
   deleteFiliere(filiere: Filiere) {
-
+    if(confirm("Etes vous sûre de vouloir supprimer la filière?")){
+      this.apiService.deleteFiliere(filiere.idF).subscribe(
+        res => {
+          let indexofFiliere = this.filieres.indexOf(filiere);
+          this.filieres.splice(indexofFiliere, 1);
+        },
+        err => {
+          alert("Erreur survenue lors de la suppression de la filiere !");
+        }
+      );
+    }
   }
 
   createFiliere(event) {

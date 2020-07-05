@@ -119,4 +119,8 @@ export class ApiService {
   postFilieres(filiere: Filiere): Observable<Filiere> {
     return this.http.post<Filiere>(this.SAVE_FILIERE_URL, filiere);
   }
+
+  deleteFiliere(idF: string): Observable<any> {
+    return this.http.delete(this.DELETE_FILIERE_URL + idF);
+  }
 }
