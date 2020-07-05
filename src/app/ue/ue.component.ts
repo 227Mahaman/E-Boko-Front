@@ -41,4 +41,28 @@ export class UeComponent implements OnInit {
     }
   }
 
+  createUe(event) {
+    event.preventDefault()
+    const target = event.target
+    const codeUe = target.querySelector('#codeUe').value
+    const intitule = target.querySelector('#intitule').value
+    const dateCreation = target.querySelector('#dateCreation').value
+    console.log(codeUe, intitule, dateCreation)
+    let newUe: Ue = {
+      idUe: null,
+      codeUe:codeUe,
+      intitule:intitule,
+      dateCreation:dateCreation
+    }
+    this.apiService.postUe(newUe).subscribe(
+      res => {
+        newUe.idUe = res.idUe;
+        this.ues.push(newUe);
+      },
+      err => {
+        alert("Erreur survenue lors de la création d'une unite UE !");
+      }
+    );
+  }
+
 }
