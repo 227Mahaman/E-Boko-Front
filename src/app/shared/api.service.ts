@@ -164,6 +164,10 @@ export class ApiService {
     return this.http.delete(this.DELETE_MODULE_URL + idMo);
   }
 
+  getAllEtudiants(): Observable<Etudiant[]> {
+    return this.http.get<Etudiant[]>(this.ALL_ETUDIANT_URL);
+  }
+
   postEtudiant(etudiant: Etudiant): Observable<Etudiant> {
     return this.http.post<Etudiant>(this.SAVE_ETUDIANT_URL, etudiant);
   }
