@@ -7,23 +7,23 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="post" enctype="multipart/form-data">
+      <form role="form" (submit)="createNiveau($event)">
         <div class="box-body">
           <div class="form-group">
             <label for="codeN">Code niveau</label>
-            <input type="text" required class="form-control" id="codeN" name="codeN" value="" placeholder="Code du niveau">
+            <input type="text" required class="form-control" id="codeN"placeholder="Code du niveau">
           </div>
           <div class="form-group">
             <label for="intituleN">Intitulé</label>
-            <input type="text" required class="form-control" id="intituleN" name="intituleN" value="" placeholder="Intitulé du niveau">
+            <input type="text" required class="form-control" id="intituleN" placeholder="Intitulé du niveau">
           </div>
           <div class="form-group">
             <label for="montantScolariteN">Montant Scolarité</label>
-            <input type="text" required class="form-control" id="montantScolariteN" name="montantScolariteN" value="" placeholder="Montant de la scolarité">
+            <input type="text" required class="form-control" id="montantScolariteN" placeholder="Montant de la scolarité">
           </div>
           <div class="form-group">
             <label for="dateCreation">Date</label>
-            <input type="date" required class="form-control" id="dateCreation" name="dateCreation" value="">
+            <input type="date" required class="form-control" id="dateCreation">
           </div>
         </div>
         <!-- /.box-body -->

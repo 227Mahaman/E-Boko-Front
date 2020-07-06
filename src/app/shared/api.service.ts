@@ -123,4 +123,8 @@ export class ApiService {
   deleteFiliere(idF: string): Observable<any> {
     return this.http.delete(this.DELETE_FILIERE_URL + idF);
   }
+
+  postNiveaux(niveau: Niveau): Observable<Niveau> {
+    return this.http.post<Niveau>(this.SAVE_NIVEAU_URL, niveau);
+  }
 }

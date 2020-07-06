@@ -30,4 +30,30 @@ export class NiveauComponent implements OnInit {
   deleteNiveau(niveau: Niveau) {
 
   }
+
+  createNiveau(event) {
+    event.preventDefault()
+    const target = event.target
+    const codeN = target.querySelector('#codeN').value
+    const intituleN = target.querySelector('#intituleN').value
+    const montantScolariteN = target.querySelector('#montantScolariteN').value
+    const dateCreation = target.querySelector('#dateCreation').value
+    console.log(codeN, intituleN, montantScolariteN, dateCreation)
+    let newNiveau: Niveau = {
+      idN:null,
+      codeN:codeN,
+      intituleN:intituleN,
+      montantScolariteN:montantScolariteN,
+      dateCreation:dateCreation
+    }
+    this.apiService.postNiveaux(newNiveau).subscribe(
+      res => {
+        newNiveau.idN = res.idN;
+        this.niveaux.push(newNiveau);
+      },
+      err => {
+        alert("Erreur survenue lors de la création d'un niveau !");
+      }
+    );
+  }
 }
