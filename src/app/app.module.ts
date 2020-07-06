@@ -67,6 +67,10 @@ const appRoutes: Routes = [
     component:UeComponent
   },
   {
+    path: 'inscription',
+    component:InscriptionComponent
+  },
+  {
     path: '',
     component:AppComponent,
     pathMatch: 'full'
