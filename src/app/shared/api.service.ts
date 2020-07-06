@@ -127,4 +127,8 @@ export class ApiService {
   postNiveaux(niveau: Niveau): Observable<Niveau> {
     return this.http.post<Niveau>(this.SAVE_NIVEAU_URL, niveau);
   }
+
+  deleteNiveau(idN: string): Observable<any> {
+    return this.http.delete(this.DELETE_NIVEAU_URL + idN);
+  }
 }

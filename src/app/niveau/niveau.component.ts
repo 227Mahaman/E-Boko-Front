@@ -28,7 +28,17 @@ export class NiveauComponent implements OnInit {
   }
 
   deleteNiveau(niveau: Niveau) {
-
+    if(confirm("Etes vous sûre de vouloir supprimer le niveau?")){
+      this.apiService.deleteNiveau(niveau.idN).subscribe(
+        res => {
+          let indexofNiveau = this.niveaux.indexOf(niveau);
+          this.niveaux.splice(indexofNiveau, 1);
+        },
+        err => {
+          alert("Erreur survenue lors de la suppression du niveau !");
+        }
+      );
+    }
   }
 
   createNiveau(event) {
