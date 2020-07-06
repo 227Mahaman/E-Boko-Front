@@ -144,4 +144,12 @@ export class ApiService {
   deleteSession(idSes: string): Observable<any> {
     return this.http.delete(this.DELETE_SESSION_URL + idSes);
   }
+
+  postSemestres(semestre: Semestre): Observable<Semestre> {
+    return this.http.post<Semestre>(this.SAVE_SEMESTRE_URL, semestre);
+  }
+
+  deleteSemestre(idS: string): Observable<any> {
+    return this.http.delete(this.DELETE_SEMESTRE_URL + idS);
+  }
 }

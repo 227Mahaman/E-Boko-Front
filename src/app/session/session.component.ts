@@ -76,7 +76,7 @@ export class SessionComponent implements OnInit {
           this.sessions.splice(indexofSession, 1);
         },
         err => {
-          alert("Erreur survenue lors de la suppression du niveau !");
+          alert("Erreur survenue lors de la suppression de la session !");
         }
       );
     }

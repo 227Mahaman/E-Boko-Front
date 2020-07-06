@@ -1,1 +1,81 @@
-<p>semestre works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Enregistrement d'un semestre</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form role="form" (submit)="createSemestre($event)">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="codeS">Code semestre</label>
+            <input type="text" required class="form-control" id="codeS" placeholder="Code du semestre">
+          </div>
+          <div class="form-group">
+            <label>Niveau</label>
+            <select class="form-control">
+              <option *ngFor="let niveau of niveaux" id="idN" value="{{niveau.idN}}">{{niveau.intituleN}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="intituleS">Intitulé</label>
+            <input type="text" required class="form-control" id="intituleS" placeholder="Intitulé du semestre">
+          </div>
+          <div class="form-group">
+            <label for="dateCreation">Date</label>
+            <input type="date" required class="form-control" id="dateCreation">
+          </div>
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary">Valider</button>
+          <p></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listes des semestres</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Intitulé</th>
+            <th>Niveau</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let semestre of semestres">
+            <td>{{semestre.idS}}</td>
+            <td>{{semestre.codeS}}</td>
+            <td>{{semestre.intituleS}}</td>
+            <td>{{semestre.idN.intituleN}}</td>
+            <td>{{semestre.dateCreation}}</td>
+            <td>
+              <a class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a (click)="deleteSemestre(semestre)" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+          <!-- -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>
