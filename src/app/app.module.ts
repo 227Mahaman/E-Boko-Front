@@ -18,7 +18,7 @@ import {Router, RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { NavigationComponent } from './navigation/navigation.component';
-import { InscriptionComponent } from './shared/inscription/inscription.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 const appRoutes: Routes = [

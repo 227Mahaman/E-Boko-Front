@@ -3,27 +3,31 @@
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Enregistrement d'un niveau</h3>
+        <h3 class="box-title">Enregistrement d'une session</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
       <form role="form" (submit)="createSession($event)">
         <div class="box-body">
           <div class="form-group">
-            <label for="codeN">Code niveau</label>
-            <input type="text" required class="form-control" id="codeN"placeholder="Code du niveau">
+            <label for="codeSes">Code session</label>
+            <input type="text" required class="form-control" id="codeSes"placeholder="Code de la session">
           </div>
           <div class="form-group">
-            <label for="intituleN">Intitulé</label>
-            <input type="text" required class="form-control" id="intituleN" placeholder="Intitulé du niveau">
+            <label for="debutSes">Date Début</label>
+            <input type="date" required class="form-control" id="debutSes">
           </div>
           <div class="form-group">
-            <label for="montantScolariteN">Montant Scolarité</label>
-            <input type="text" required class="form-control" id="montantScolariteN" placeholder="Montant de la scolarité">
+            <label for="finSes">Date Fin</label>
+            <input type="date" required class="form-control" id="finSes">
           </div>
           <div class="form-group">
-            <label for="dateCreation">Date</label>
-            <input type="date" required class="form-control" id="dateCreation">
+            <label>Unité</label>
+            <select class="form-control">
+              <!--<option *ngFor="let ue of ues" id="idUe" value="'idUe':'{{ue.idUe}}', 'codeUe':'{{ue.codeUe}}', 'intitule':'{{ue.intitule}}', 'dateCreation':'{{ue.dateCreation}}', 'codeUCrea':null,'dateMAJ':null, 'codeUMAJ':null, 'dateSuppr':null, 'codeUSuppr':null, 'codePersoUE':null ">{{ue.intitule}}</option>-->
+              <option *ngFor="let ue of ues" id="idUe" value="{{ue.idUe}}">{{ue.intitule}}</option>
+              <!--<option *ngFor="let ue of ues" id="idUe" value="id{{ue}}">{{ue.intitule}}</option>-->
+            </select>
           </div>
         </div>
         <!-- /.box-body -->
@@ -38,7 +42,7 @@
   <div class="col-md-12">
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Listes des niveaux</h3>
+        <h3 class="box-title">Listes des sessions</h3>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -46,9 +50,9 @@
           <tbody><tr>
             <th>ID</th>
             <th>Code</th>
-            <th>Intitulé</th>
-            <th>Montant Scolarité</th>
-            <th>Date</th>
+            <th>Debut</th>
+            <th>Fin</th>
+            <th>UE</th>
             <th>Action</th>
           </tr>
           <tr *ngFor="let session of sessions">
@@ -56,7 +60,7 @@
             <td>{{session.codeSes}}</td>
             <td>{{session.debutSes}}</td>
             <td>{{session.finSes}}</td>
-            <td>{{session.idUe}}</td>
+            <td>{{session.idUe.intitule}}</td>
             <td>
               <a class="btn btn-primary">
                 <i class="fa fa-edit"></i>

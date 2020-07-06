@@ -136,4 +136,12 @@ export class ApiService {
   getAllSessions(): Observable<Session[]> {
     return this.http.get<Session[]>(this.ALL_SESSION_URL);
   }
+
+  postSessions(session: Session): Observable<Session> {
+    return this.http.post<Session>(this.SAVE_SESSION_URL, session);
+  }
+
+  deleteSession(idSes: string): Observable<any> {
+    return this.http.delete(this.DELETE_SESSION_URL + idSes);
+  }
 }
