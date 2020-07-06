@@ -10,6 +10,7 @@ import {Module} from "../models/module";
 import {Semestre} from "../models/semestre";
 import {Session} from "../models/session";
 import {Etudiant} from "../models/etudiant";
+import {Inscription} from "../models/inscription";
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +68,11 @@ export class ApiService {
   private SAVE_UE_URL = `${this.BASE_URL}\\ue\\add`;
   private UPDATE_UE_URL = `${this.BASE_URL}\\ue\\update`;
   private DELETE_UE_URL = `${this.BASE_URL}\\ue\\`;
+  //Inscription
+  private ALL_INSCRIPTION_URL = `${this.BASE_URL}\\inscription\\all`;
+  private SAVE_INSCRIPTION_URL = `${this.BASE_URL}\\inscription\\add`;
+  private UPDATE_INSCRIPTION_URL = `${this.BASE_URL}\\inscription\\update`;
+  private DELETE_INSCRIPTION_URL = `${this.BASE_URL}\\inscription\\`;
 
   constructor(private http: HttpClient) { }
 
@@ -160,5 +166,25 @@ export class ApiService {
 
   postEtudiant(etudiant: Etudiant): Observable<Etudiant> {
     return this.http.post<Etudiant>(this.SAVE_ETUDIANT_URL, etudiant);
+  }
+
+  updateEtudiant() {
+
+  }
+
+  deleteEtudiant(){
+
+  }
+
+  getAllInscriptions(): Observable<Inscription[]> {
+    return this.http.get<Inscription[]>(this.ALL_INSCRIPTION_URL);
+  }
+
+  postInscriptions(inscription: Inscription): Observable<Inscription> {
+    return this.http.post<Inscription>(this.SAVE_INSCRIPTION_URL, inscription);
+  }
+
+  deleteInscription(idI: string): Observable<any> {
+    return this.http.delete(this.DELETE_INSCRIPTION_URL + idI);
   }
 }
