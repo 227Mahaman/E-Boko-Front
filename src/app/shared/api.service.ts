@@ -9,6 +9,7 @@ import {Devoir} from "../models/devoir";
 import {Module} from "../models/module";
 import {Semestre} from "../models/semestre";
 import {Session} from "../models/session";
+import {Etudiant} from "../models/etudiant";
 
 @Injectable({
   providedIn: 'root'
@@ -155,5 +156,9 @@ export class ApiService {
 
   deleteModule(idMo: string): Observable<any> {
     return this.http.delete(this.DELETE_MODULE_URL + idMo);
+  }
+
+  postEtudiant(etudiant: Etudiant): Observable<Etudiant> {
+    return this.http.post<Etudiant>(this.SAVE_ETUDIANT_URL, etudiant);
   }
 }
