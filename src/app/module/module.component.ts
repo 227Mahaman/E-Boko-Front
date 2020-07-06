@@ -43,7 +43,17 @@ export class ModuleComponent implements OnInit {
   }
 
   deleteModule(module: Module) {
-
+    if(confirm("Etes vous sûre de vouloir supprimer le module?")){
+      this.apiService.deleteModule(module.idMo).subscribe(
+        res => {
+          let indexofModule = this.modules.indexOf(module);
+          this.modules.splice(indexofModule, 1);
+        },
+        err => {
+          alert("Erreur survenue lors de la suppression du module !");
+        }
+      );
+    }
   }
 
   private getAllAnneescolaire() {
@@ -95,5 +105,9 @@ export class ModuleComponent implements OnInit {
         alert("Erreur survenue lors de la recuperation des données de la table Semestre !");
       }
     );
+  }
+
+  createModule(event) {
+
   }
 }

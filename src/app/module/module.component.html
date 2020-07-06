@@ -7,7 +7,7 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="post" enctype="multipart/form-data">
+      <form role="form" (submit)="createModule($event)">
         <div class="box-body">
           <div class="form-group">
             <label for="codeMo">Code du Module</label>
@@ -19,32 +19,32 @@
           </div>
           <div class="form-group">
             <label>Année Scolaire</label>
-            <select *ngFor="let anneescolaire of anneescolaires" class="form-control" id="codeA" name="codeA">
-              <option value="{{anneescolaire.codeA}}">{{anneescolaire.intituleA}}</option>
+            <select class="form-control">
+              <option *ngFor="let anneescolaire of anneescolaires" id="idA" value="{{anneescolaire.idA}}">{{anneescolaire.intituleA}}</option>
             </select>
           </div>
           <div class="form-group">
             <label>Filière</label>
-            <select *ngFor="let filiere of filieres" class="form-control" id="codeF" name="codeF">
-              <option value="{{filiere.codeF}}">{{filiere.intituleF}}</option>
+            <select class="form-control">
+              <option *ngFor="let filiere of filieres" id="idF" value="{{filiere.idF}}">{{filiere.intituleF}}</option>
             </select>
           </div>
           <div class="form-group">
             <label>Niveau</label>
-            <select *ngFor="let niveau of niveaux" class="form-control" id="codeN" name="codeN">
-              <option value="{{niveau.codeN}}">{{niveau.intituleN}}</option>
+            <select class="form-control" >
+              <option *ngFor="let niveau of niveaux" id="idN" value="{{niveau.idN}}">{{niveau.intituleN}}</option>
             </select>
           </div>
           <div class="form-group">
             <label>Ue</label>
-            <select *ngFor="let ue of ues" class="form-control" id="codeUe" name="codeUe">
-              <option value="{{ue.codeUe}}">{{ue.intitule}}</option>
+            <select class="form-control">
+              <option *ngFor="let ue of ues" id="idUe" value="{{ue.idUe}}">{{ue.intitule}}</option>
             </select>
           </div>
           <div class="form-group">
             <label>Semestre</label>
-            <select *ngFor="let semestre of semestres" class="form-control" id="codeS" name="codeS">
-              <option value="{{semestre.codeS}}">{{semestre.intituleS}}</option>
+            <select class="form-control">
+              <option *ngFor="let semestre of semestres" id="idS" value="{{semestre.idS}}">{{semestre.intituleS}}</option>
             </select>
           </div>
           <div class="form-group">
@@ -85,11 +85,11 @@
             <td>{{module.idMo}}</td>
             <td>{{module.codeMo}}</td>
             <td>{{module.creditMo}}</td>
-            <td>{{module.codeA.intituleA}}</td>
-            <td>{{module.codeF.intituleF}}</td>
-            <td>{{module.codeN.intituleN}}</td>
-            <td>{{module.codeUe.intitule}}</td>
-            <td>{{module.codeS.intituleS}}</td>
+            <td>{{module.idA.intituleA}}</td>
+            <td>{{module.idF.intituleF}}</td>
+            <td>{{module.idN.intituleN}}</td>
+            <td>{{module.idUe.intitule}}</td>
+            <td>{{module.idS.intituleS}}</td>
             <td>{{module.dateCreation}}</td>
             <td>
               <a class="btn btn-primary">

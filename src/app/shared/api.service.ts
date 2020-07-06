@@ -152,4 +152,8 @@ export class ApiService {
   deleteSemestre(idS: string): Observable<any> {
     return this.http.delete(this.DELETE_SEMESTRE_URL + idS);
   }
+
+  deleteModule(idMo: string): Observable<any> {
+    return this.http.delete(this.DELETE_MODULE_URL + idMo);
+  }
 }
