@@ -8,10 +8,10 @@ export interface Module {
   idMo:string;
   codeMo:string;
   creditMo:string;
-  codeA:Anneescolaire;
-  codeF:Filiere;
-  codeN:Niveau;
-  codeUe:Ue;
-  codeS:Semestre;
+  idA:Anneescolaire;
+  idF:Filiere;
+  idN:Niveau;
+  idUe:Ue;
+  idS:Semestre;
   dateCreation:Date;
 }

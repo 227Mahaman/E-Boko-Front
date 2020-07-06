@@ -5,7 +5,7 @@ export interface Note {
   idNo:string;
   codeNo:string;
   valeurNo:string;
-  codeD:Devoir;
-  matriculeE:Etudiant;
+  idD:Devoir;
+  idE:Etudiant;
   dateCreation: Date;
 }

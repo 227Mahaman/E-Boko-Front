@@ -5,5 +5,5 @@ export interface Session {
   codeSes:string;
   debutSes:Date;
   finSes:Date;
-  codeU:Ue;
+  idUe:Ue;
 }

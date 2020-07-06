@@ -7,7 +7,7 @@ export interface Devoir {
   sessionD:string;
   typeD:string;
   coefD:string;
-  codeMo:Module;
+  idMo:Module;
   nbHeureD:string;
   heureDebutD:string;
   periodeD:string;
