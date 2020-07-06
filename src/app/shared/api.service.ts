@@ -8,6 +8,7 @@ import {Niveau} from "../models/niveau";
 import {Devoir} from "../models/devoir";
 import {Module} from "../models/module";
 import {Semestre} from "../models/semestre";
+import {Session} from "../models/session";
 
 @Injectable({
   providedIn: 'root'
@@ -130,5 +131,9 @@ export class ApiService {
 
   deleteNiveau(idN: string): Observable<any> {
     return this.http.delete(this.DELETE_NIVEAU_URL + idN);
+  }
+
+  getAllSessions(): Observable<Session[]> {
+    return this.http.get<Session[]>(this.ALL_SESSION_URL);
   }
 }
