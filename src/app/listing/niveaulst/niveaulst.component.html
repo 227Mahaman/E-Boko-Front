@@ -1,1 +1,44 @@
-<p>niveaulst works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listes des Niveaux</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Intitulé</th>
+            <th>Montant Scolarité</th>
+            <th>Date Création</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let niveau of niveaux">
+            <td>{{niveau.idN}}</td>
+            <td>{{niveau.codeN}}</td>
+            <td>{{niveau.intituleN}}</td>
+            <td>{{niveau.montantScolariteN}}</td>
+            <td>{{niveau.dateCreation}}</td>
+            <td>
+              <a class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a (click)="deleteNiveaux(niveau)" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+          <!-- -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>
+<p>filierelst works!</p>

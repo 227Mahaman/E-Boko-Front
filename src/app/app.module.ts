@@ -82,6 +82,10 @@ const appRoutes: Routes = [
     component:FilierelstComponent
   },
   {
+    path: 'lNiveau',
+    component:NiveaulstComponent
+  },
+  {
     path: '',
     component:AppComponent,
     pathMatch: 'full'
