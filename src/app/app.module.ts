@@ -77,6 +77,10 @@ const appRoutes: Routes = [
     component:EtudiantlstComponent
   },
   {
+    path: 'lFiliere',
+    component:FilierelstComponent
+  },
+  {
     path: '',
     component:AppComponent,
     pathMatch: 'full'
