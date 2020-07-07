@@ -22,6 +22,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { EtudiantlstComponent } from './listing/etudiantlst/etudiantlst.component';
 import { FilierelstComponent } from './listing/filierelst/filierelst.component';
 import { NiveaulstComponent } from './listing/niveaulst/niveaulst.component';
+import { SallelstComponent } from './listing/sallelst/sallelst.component';
 
 
 const appRoutes: Routes = [
@@ -86,6 +87,10 @@ const appRoutes: Routes = [
     component:NiveaulstComponent
   },
   {
+    path: 'lSalle',
+    component:SallelstComponent
+  },
+  {
     path: '',
     component:AppComponent,
     pathMatch: 'full'
@@ -110,7 +115,8 @@ const appRoutes: Routes = [
     InscriptionComponent,
     EtudiantlstComponent,
     FilierelstComponent,
-    NiveaulstComponent
+    NiveaulstComponent,
+    SallelstComponent
   ],
   imports: [
     BrowserModule,
