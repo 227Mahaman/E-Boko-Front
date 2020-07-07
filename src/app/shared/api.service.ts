@@ -11,6 +11,7 @@ import {Semestre} from "../models/semestre";
 import {Session} from "../models/session";
 import {Etudiant} from "../models/etudiant";
 import {Inscription} from "../models/inscription";
+import {Salle} from "../models/salle";
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,11 @@ export class ApiService {
   private SAVE_SESSION_URL = `${this.BASE_URL}\\session\\add`;
   private UPDATE_SESSION_URL = `${this.BASE_URL}\\session\\update`;
   private DELETE_SESSION_URL = `${this.BASE_URL}\\session\\`;
+  //Salle
+  private ALL_SALLE_URL = `${this.BASE_URL}\\salle\\all`;
+  private SAVE_SALLE_URL = `${this.BASE_URL}\\salle\\add`;
+  private UPDATE_SALLE_URL = `${this.BASE_URL}\\salle\\update`;
+  private DELETE_SALLE_URL = `${this.BASE_URL}\\salle\\`;
   //Ue
   private ALL_UE_URL = `${this.BASE_URL}\\ue\\all`;
   private SAVE_UE_URL = `${this.BASE_URL}\\ue\\add`;
@@ -190,5 +196,9 @@ export class ApiService {
 
   deleteInscription(idI: string): Observable<any> {
     return this.http.delete(this.DELETE_INSCRIPTION_URL + idI);
+  }
+
+  getAllSalles(): Observable<Salle[]> {
+    return this.http.get<Salle[]>(this.ALL_SALLE_URL);
   }
 }

@@ -1,1 +1,43 @@
-<p>sallelst works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listes des Salles</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Intitulé</th>
+            <th>Capacité</th>
+            <th>Date Création</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let salle of salles">
+            <td>{{salle.idSa}}</td>
+            <td>{{salle.codeSa}}</td>
+            <td>{{salle.intituleSa}}</td>
+            <td>{{salle.capaciteSa}}</td>
+            <td>{{salle.dateCreation}}</td>
+            <td>
+              <a class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a (click)="deleteSalles(salle)" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+          <!-- -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>

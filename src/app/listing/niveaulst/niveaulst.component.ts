@@ -28,6 +28,6 @@ export class NiveaulstComponent implements OnInit {
   }
 
   deleteNiveaux(niveau: Niveau) {
-    
+
   }
 }
