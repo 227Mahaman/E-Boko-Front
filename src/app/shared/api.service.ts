@@ -12,6 +12,7 @@ import {Session} from "../models/session";
 import {Etudiant} from "../models/etudiant";
 import {Inscription} from "../models/inscription";
 import {Salle} from "../models/salle";
+import {Note} from "../models/note";
 
 @Injectable({
   providedIn: 'root'
@@ -200,5 +201,9 @@ export class ApiService {
 
   getAllSalles(): Observable<Salle[]> {
     return this.http.get<Salle[]>(this.ALL_SALLE_URL);
+  }
+
+  getAllNotes(): Observable<Note[]> {
+    return this.http.get<Note[]>(this.ALL_NOTE_URL);
   }
 }

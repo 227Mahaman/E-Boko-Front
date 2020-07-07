@@ -51,7 +51,7 @@ const appRoutes: Routes = [
     component:NiveauComponent
   },
   {
-    path: 'note',
+    path: 'noterEtudiant',
     component:NoteComponent
   },
   {

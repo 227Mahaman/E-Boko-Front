@@ -1,1 +1,89 @@
-<p>note works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Enregistrement de note</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form role="form" (submit)="createNote($event)">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="codeNo">Code Note</label>
+            <input type="text" required class="form-control" id="codeNo" placeholder="Code du note">
+          </div>
+          <div class="form-group">
+            <label for="valeurNo">Note</label>
+            <input type="text" required class="form-control" id="valeurNo" placeholder="Code du note">
+          </div>
+          <div class="form-group">
+            <label>Devoir</label>
+            <select class="form-control">
+              <option *ngFor="let devoir of devoirs" id="idD" value="{{devoir.idD}}">{{devoir.codeD}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Etudiant</label>
+            <select class="form-control">
+              <option *ngFor="let etudiant of etudiants" id="idE" value="{{etudiant.idE}}">{{etudiant.matriculeE}} {{etudiant.nomE}} {{etudiant.prenomE}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dateCreation">Date Création</label>
+            <input type="date" required class="form-control" id="dateCreation">
+          </div>
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary">Valider</button>
+          <p></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listes des notes</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Devoir</th>
+            <th>Note</th>
+            <th>Etudiant</th>
+            <th>Date Création</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let note of notes">
+            <td>{{note.idNo}}</td>
+            <td>{{note.codeNo}}</td>
+            <td>{{note.idD.codeD}}</td>
+            <td>{{note.valeurNo}}</td>
+            <td>{{note.idE.matriculeE}} {{note.idE.nomE}} {{note.idE.prenomE}}</td>
+            <td>{{note.dateCreation}}</td>
+            <td>
+              <a class="btn btn-primary">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a (click)="deleteNote(note)" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
+          </tr>
+          <!-- -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>
