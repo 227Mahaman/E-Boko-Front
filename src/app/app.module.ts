@@ -93,6 +93,14 @@ const appRoutes: Routes = [
     component:SallelstComponent
   },
   {
+    path: 'mesdevoirs',
+    component:MydevoirsComponent
+  },
+  {
+    path: 'mesnotes',
+    component:MynotesComponent
+  },
+  {
     path: '',
     component:AppComponent,
     pathMatch: 'full'
