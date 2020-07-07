@@ -21,6 +21,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { EtudiantlstComponent } from './listing/etudiantlst/etudiantlst.component';
 import { FilierelstComponent } from './listing/filierelst/filierelst.component';
+import { NiveaulstComponent } from './listing/niveaulst/niveaulst.component';
 
 
 const appRoutes: Routes = [
@@ -104,7 +105,8 @@ const appRoutes: Routes = [
     NavigationComponent,
     InscriptionComponent,
     EtudiantlstComponent,
-    FilierelstComponent
+    FilierelstComponent,
+    NiveaulstComponent
   ],
   imports: [
     BrowserModule,
