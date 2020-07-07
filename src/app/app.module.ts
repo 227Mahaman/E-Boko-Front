@@ -20,6 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { NavigationComponent } from './navigation/navigation.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { EtudiantlstComponent } from './listing/etudiantlst/etudiantlst.component';
+import { FilierelstComponent } from './listing/filierelst/filierelst.component';
 
 
 const appRoutes: Routes = [
@@ -98,7 +99,8 @@ const appRoutes: Routes = [
     SessionComponent,
     NavigationComponent,
     InscriptionComponent,
-    EtudiantlstComponent
+    EtudiantlstComponent,
+    FilierelstComponent
   ],
   imports: [
     BrowserModule,
