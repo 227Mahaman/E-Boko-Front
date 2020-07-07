@@ -23,6 +23,7 @@ import { EtudiantlstComponent } from './listing/etudiantlst/etudiantlst.componen
 import { FilierelstComponent } from './listing/filierelst/filierelst.component';
 import { NiveaulstComponent } from './listing/niveaulst/niveaulst.component';
 import { SallelstComponent } from './listing/sallelst/sallelst.component';
+import { MynotesComponent } from './listing/mynotes/mynotes.component';
 
 
 const appRoutes: Routes = [
@@ -116,7 +117,8 @@ const appRoutes: Routes = [
     EtudiantlstComponent,
     FilierelstComponent,
     NiveaulstComponent,
-    SallelstComponent
+    SallelstComponent,
+    MynotesComponent
   ],
   imports: [
     BrowserModule,
