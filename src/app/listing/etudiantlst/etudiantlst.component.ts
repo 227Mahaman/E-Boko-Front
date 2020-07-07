@@ -28,6 +28,6 @@ export class EtudiantlstComponent implements OnInit {
   }
 
   deleteEtudiant(etudiant: Etudiant) {
-    
+
   }
 }

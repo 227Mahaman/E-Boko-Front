@@ -72,6 +72,10 @@ const appRoutes: Routes = [
     component:InscriptionComponent
   },
   {
+    path: 'lEtudiant',
+    component:EtudiantlstComponent
+  },
+  {
     path: '',
     component:AppComponent,
     pathMatch: 'full'

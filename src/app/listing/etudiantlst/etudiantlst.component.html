@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Listes des inscriptions</h3>
+        <h3 class="box-title">Listes des étudiants</h3>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -10,18 +10,21 @@
           <tbody><tr>
             <th>ID</th>
             <th>Matricule</th>
-            <th>Nom - Prénoms</th>
+            <th>Nom</th>
+            <th>Prénoms</th>
             <th>Nationalité</th>
-            <th>Date lieu</th>
-            <th>Date</th>
+            <th>Date de Naissance</th>
+            <th>lieu de Naissance</th>
             <th>Action</th>
           </tr>
           <tr *ngFor="let etudiant of etudiants">
             <td>{{etudiant.idE}}</td>
             <td>{{etudiant.matriculeE}}</td>
-            <td>{{etudiant.nomE}} - {{etudiant.prenomE}}</td>
+            <td>{{etudiant.nomE}}</td>
+            <td>{{etudiant.prenomE}}</td>
             <td>{{etudiant.nationaliteE}}</td>
-            <td>{{etudiant.dateNE}} - {{etudiant.lieuNE}}</td>
+            <td>{{etudiant.dateNE}}</td>
+            <td>{{etudiant.lieuNE}}</td>
             <td>
               <a class="btn btn-primary">
                 <i class="fa fa-edit"></i>
