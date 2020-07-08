@@ -55,6 +55,7 @@ export class ApiService {
   private SAVE_NOTE_URL = `${this.BASE_URL}\\note\\add`;
   private UPDATE_NOTE_URL = `${this.BASE_URL}\\note\\update`;
   private DELETE_NOTE_URL = `${this.BASE_URL}\\note\\`;
+  private GET_NOTE_URL = `${this.BASE_URL}\\note\\byEtudiant\\`;
   //Semestre
   private ALL_SEMESTRE_URL = `${this.BASE_URL}\\semestre\\all`;
   private SAVE_SEMESTRE_URL = `${this.BASE_URL}\\semestre\\add`;
@@ -205,5 +206,9 @@ export class ApiService {
 
   getAllNotes(): Observable<Note[]> {
     return this.http.get<Note[]>(this.ALL_NOTE_URL);
+  }
+
+  getMyNotes(idE: string): Observable<any> {
+    return this.http.get(this.GET_NOTE_URL + idE);
   }
 }

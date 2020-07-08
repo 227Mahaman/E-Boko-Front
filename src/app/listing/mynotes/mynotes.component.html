@@ -1,1 +1,34 @@
-<p>mynotes works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Liste de mes notes</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tbody><tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Devoir</th>
+            <th>Note</th>
+            <th>Date Création</th>
+          </tr>
+          <tr *ngFor="let note of notes">
+            <td>{{note.idNo}}</td>
+            <td>{{note.codeNo}}</td>
+            <td>{{note.idD.codeD}} - {{note.idD.dateD}}</td>
+            <td>{{note.valeurNo}}</td>
+            <td>{{note.dateCreation}}</td>
+          </tr>
+          <!-- -->
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+
+      </div>
+    </div>
+  </div>
+</div>
