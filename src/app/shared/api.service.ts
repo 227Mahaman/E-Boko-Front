@@ -30,6 +30,7 @@ export class ApiService {
   private SAVE_DEVOIR_URL = `${this.BASE_URL}\\devoir\\add`;
   private UPDATE_DEVOIR_URL = `${this.BASE_URL}\\devoir\\update`;
   private DELETE_DEVOIR_URL = `${this.BASE_URL}\\devoir\\`;
+  private GET_MY_DEVOIR_URL = `${this.BASE_URL}\\devoir\\byEtudiant\\`;
   //Etudiant
   private ALL_ETUDIANT_URL = `${this.BASE_URL}\\etudiant\\all`;
   private SAVE_ETUDIANT_URL = `${this.BASE_URL}\\etudiant\\add`;
@@ -55,7 +56,7 @@ export class ApiService {
   private SAVE_NOTE_URL = `${this.BASE_URL}\\note\\add`;
   private UPDATE_NOTE_URL = `${this.BASE_URL}\\note\\update`;
   private DELETE_NOTE_URL = `${this.BASE_URL}\\note\\`;
-  private GET_NOTE_URL = `${this.BASE_URL}\\note\\byEtudiant\\`;
+  private GET_MY_NOTE_URL = `${this.BASE_URL}\\note\\byEtudiant\\`;
   //Semestre
   private ALL_SEMESTRE_URL = `${this.BASE_URL}\\semestre\\all`;
   private SAVE_SEMESTRE_URL = `${this.BASE_URL}\\semestre\\add`;
@@ -209,6 +210,10 @@ export class ApiService {
   }
 
   getMyNotes(idE: string): Observable<any> {
-    return this.http.get(this.GET_NOTE_URL + idE);
+    return this.http.get(this.GET_MY_NOTE_URL + idE);
+  }
+
+  getMyDevoirs(idE: string): Observable<any> {
+    return this.http.get(this.GET_MY_DEVOIR_URL + idE);
   }
 }
