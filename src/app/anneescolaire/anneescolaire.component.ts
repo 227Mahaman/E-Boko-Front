@@ -38,7 +38,7 @@ export class AnneescolaireComponent implements OnInit {
           this.anneescolaires.splice(indexOfAnneescolaire, 1);
         },
         err => {
-          alert("Erreur survenue lors de la suppression d'une année scolaire !");
+          alert("Erreur survenue lors de la suppression d'une année scolaire  tezst");
         }
       );
     }
